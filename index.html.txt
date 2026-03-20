@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的演唱會排程</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ticket-card {
+            position: relative;
+            background: linear-gradient(to right, #6b634d 75%, #5a5341 75%);
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        /* 票券缺口設計 */
+        .ticket-card::before, .ticket-card::after {
+            content: '';
+            position: absolute;
+            right: 23%;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .ticket-card::before { top: -12px; }
+        .ticket-card::after { bottom: -12px; }
+        
+        .divider {
+            border-left: 2px dotted rgba(255,255,255,0.3);
+            height: 80%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6">
+    <div class="max-w-md mx-auto">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">我的演唱會</h1>
+            <button class="text-pink-500 text-3xl font-light">+</button>
+        </div>
+
+        <input type="text" placeholder="搜尋演唱會或歌手" class="w-full bg-gray-100 rounded-full py-3 px-6 mb-8 focus:outline-none">
+
+        <div class="space-y-4">
+            <div class="ticket-card flex h-36 text-white shadow-lg">
+                <div class="w-3/4 p-4 flex gap-4">
+                    <img src="https://via.placeholder.com/80" class="w-20 h-20 rounded-xl object-cover">
+                    <div>
+                        <h2 class="font-bold text-lg truncate">結束バンド @ 大港開唱</h2>
+                        <p class="text-sm opacity-80">結束バンド</p>
+                        <p class="text-xs mt-2">📅 3月22日 📍 駁二藝術特區</p>
+                    </div>
+                </div>
+                <div class="w-1/4 flex flex-col items-center justify-center border-l-2 border-dotted border-white/20">
+                    <span class="text-xs font-medium uppercase">Mar</span>
+                    <span class="text-3xl font-bold">22</span>
+                    <span class="mt-2 text-[10px] bg-green-500/30 px-2 py-0.5 rounded-full text-green-200">2天</span>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</body>
+</html>
